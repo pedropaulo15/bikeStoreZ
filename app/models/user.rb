@@ -4,9 +4,25 @@ class User < ApplicationRecord
     CUSTOMER = '2'.freeze
   end
 
-  before_create :validate_user_role
+  has_many :purchases
 
-  def validate_user_role
-    user_role == UserRole::ADMIN || user_role == UserRole::CUSTOMER
+  validate :check_user_role
+
+  private
+
+  def valid_user_role?
+    user_is_admin? || user_is_customer?
+  end
+
+  def check_user_role
+    errors.add(:user_role, 'is invalid, please use a valid value') unless valid_user_role?
+  end
+
+  def user_is_admin?
+    user_role == UserRole::ADMIN.to_i
+  end
+
+  def user_is_customer?
+    user_role == UserRole::CUSTOMER.to_i
   end
 end
