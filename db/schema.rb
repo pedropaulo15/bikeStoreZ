@@ -20,8 +20,10 @@ ActiveRecord::Schema.define(version: 2021_03_27_175927) do
     t.string "rim_color"
     t.string "saddle_color"
     t.string "image_url"
+    t.integer "purchase_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["purchase_id"], name: "index_bikes_on_purchase_id"
   end
 
   create_table "purchases", force: :cascade do |t|
@@ -43,6 +45,7 @@ ActiveRecord::Schema.define(version: 2021_03_27_175927) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "bikes", "purchases"
   add_foreign_key "purchases", "bikes"
   add_foreign_key "purchases", "users"
 end

@@ -37,7 +37,8 @@ bikes = Bike.create(
       wheel_size: 15,
       rim_color: 'Black',
       saddle_color: 'Spotted',
-      image_url: 'https://d2j6dbq0eux0bg.cloudfront.net/images/28287025/1406138531.jpg'
+      image_url: 'https://d2j6dbq0eux0bg.cloudfront.net/images/28287025/1406138531.jpg',
+      purchase_id: nil
     },
     {
       name: 'White Carrera Hybrid',
@@ -60,7 +61,8 @@ bikes = Bike.create(
       wheel_size: 17,
       rim_color: 'White',
       saddle_color: 'Black',
-      image_url: 'https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/2/2019/10/carrera-virtuoso.jpg'
+      image_url: 'https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/2/2019/10/carrera-virtuoso.jpg',
+      purchase_id: nil
     },
     {
       name: 'Apollo Phaze Mens Montain Bike Blue',
@@ -71,7 +73,8 @@ bikes = Bike.create(
       wheel_size: 19,
       rim_color: 'Blue',
       saddle_color: 'Black',
-      image_url: 'https://i1.adis.ws/i/washford/566205?w=1480&h=1110&qlt=75&fmt=webp&v=1'
+      image_url: 'https://i1.adis.ws/i/washford/566205?w=1480&h=1110&qlt=75&fmt=webp&v=1',
+      purchase_id: nil
     }
   ]
 )

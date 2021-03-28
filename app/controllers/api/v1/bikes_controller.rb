@@ -19,7 +19,7 @@ module Api
         if bike.save
           render json: BikeSerializer.new(bike).serializable_hash, status: :created
         else
-          render json: { error: user.errors }, status: :unprocessable_entity
+          render json: { error: bike.errors }, status: :unprocessable_entity
         end
       end
 
