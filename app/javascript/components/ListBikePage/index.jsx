@@ -68,8 +68,8 @@ export default function ListBikePage() {
     setRimColorValue(event.target.value);
   };
   
-  const handleCaddleColorChange = (event) => {
-    setCaddleColorValue(event.target.value);
+  const handleSaddleColorChange = (event) => {
+    setSaddleColorValue(event.target.value);
   };
   
   const handleOpenModal = () => {
@@ -82,7 +82,7 @@ export default function ListBikePage() {
   
   const handleBuyBikeButton = () => {
     console.log(
-      `Bike Details: Rim Color [${rimColorvalue}] and Caddle Color [${saddleColorvalue}]`
+      `Bike Details: Rim Color [${rimColorvalue}] and Saddle Color [${saddleColorvalue}]`
     );
     console.log("Redirect the user to Success page...");
   };
@@ -207,7 +207,7 @@ export default function ListBikePage() {
         
         <Divider variant="middle" className={classes.divider} />
         
-        <Typography variant="h6">Caddle Color</Typography>
+        <Typography variant="h6">Saddle Color</Typography>
         <Typography variant="body1">* Black</Typography>
         <Typography variant="body1">* Blue</Typography>
         <Typography variant="body1">* Brown</Typography>
@@ -268,7 +268,7 @@ export default function ListBikePage() {
             </div>
             <FormControl component="fieldset">
               {renderRimColorOption()}
-              {renderCaddleColorOption()}
+              {renderSaddleColorOption()}
             </FormControl>
             <Typography variant="h5" component="h2">
               $ 1.399,99
@@ -295,7 +295,7 @@ export default function ListBikePage() {
             </div>
             <FormControl component="fieldset">
               {renderRimColorOption()}
-              {renderCaddleColorOption()}
+              {renderSaddleColorOption()}
             </FormControl>
             <Typography variant="h5" component="h2">
               $ 1.399,99
@@ -322,7 +322,7 @@ export default function ListBikePage() {
             </div>
             <FormControl component="fieldset">
               {renderRimColorOption()}
-              {renderCaddleColorOption()}
+              {renderSaddleColorOption()}
             </FormControl>
             <Typography variant="h5" component="h2">
               $ 1.399,99

@@ -6,6 +6,7 @@ import Divider from "@material-ui/core/Divider";
 import Button from "@material-ui/core/Button";
 import { CheckCircle } from "@material-ui/icons";
 import { Alert } from "@material-ui/lab";
+import {Link} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   notificationPage: {
@@ -71,18 +72,24 @@ export default function SimplePaper() {
           
           <Divider variant="middle" className={classes.divider} />
           <Divider variant="middle" className={classes.divider} />
-          
-          <Button
-            variant="outlined"
-            color="primary"
-            onClick={() => {
-              console.log("Redirect user to Home Page");
-            }}
-            className={classes.formButton}
-            size="small"
+  
+          <Link
+            to={{ pathname: '/', state: { foo: 'bar' } }}
+            className="btn btn-lg"
+            role="button"
           >
-            Back to home page
-          </Button>
+            <Button
+              variant="outlined"
+              color="primary"
+              onClick={() => {
+                console.log("Redirect user to Home Page");
+              }}
+              className={classes.formButton}
+              size="small"
+            >
+              Back to home page
+            </Button>
+          </Link>
         </Paper>
       </div>
     </div>
