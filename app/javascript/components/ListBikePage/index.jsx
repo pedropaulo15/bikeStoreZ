@@ -60,7 +60,7 @@ export default function ListBikePage() {
   console.log(`Props: ${JSON.stringify(useLocation())}`);
   
   const [rimColorvalue, setRimColorValue] = useState("");
-  const [caddleColorvalue, setCaddleColorValue] = useState("");
+  const [saddleColorvalue, setSaddleColorValue] = useState("");
   const [openModal, setOpenModal] = useState(false);
   const classes = useStyles();
   
@@ -82,7 +82,7 @@ export default function ListBikePage() {
   
   const handleBuyBikeButton = () => {
     console.log(
-      `Bike Details: Rim Color [${rimColorvalue}] and Caddle Color [${caddleColorvalue}]`
+      `Bike Details: Rim Color [${rimColorvalue}] and Caddle Color [${saddleColorvalue}]`
     );
     console.log("Redirect the user to Success page...");
   };
@@ -121,17 +121,17 @@ export default function ListBikePage() {
     );
   };
   
-  const renderCaddleColorOption = () => {
+  const renderSaddleColorOption = () => {
     return (
       <div>
         <FormLabel component="legend">
-          <h3>Caddle Collor</h3>
+          <h3>Saddle Collor</h3>
         </FormLabel>
         <RadioGroup
-          aria-label="caddleColor"
-          name="caddleColor"
-          value={caddleColorvalue}
-          onChange={handleCaddleColorChange}
+          aria-label="saddleColor"
+          name="saddleColor"
+          value={saddleColorvalue}
+          onChange={handleSaddleColorChange}
         >
           <div>
             <FormControlLabel
