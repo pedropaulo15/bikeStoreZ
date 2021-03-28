@@ -6,7 +6,7 @@ one:
   price: 1.5
   wheel_size: 1
   rim_color: MyString
-  caddle_color: MyString
+  saddle_color: MyString
   image_url: MyString
 
 two:
@@ -15,5 +15,5 @@ two:
   price: 1.5
   wheel_size: 1
   rim_color: MyString
-  caddle_color: MyString
+  saddle_color: MyString
   image_url: MyString
