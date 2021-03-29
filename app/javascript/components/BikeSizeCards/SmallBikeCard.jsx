@@ -22,9 +22,8 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const smallBikeCategory = (bikeSize) => {
+const smallBikeCard = () => {
   const classes = useStyles();
-  console.log(`props: ${JSON.stringify(bikeSize)}`);
   
   return (
     <Card className={classes.card}>
@@ -58,4 +57,4 @@ const smallBikeCategory = (bikeSize) => {
   );
 };
 
-export default smallBikeCategory;
+export default smallBikeCard;
