@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
@@ -42,9 +42,9 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function SimplePaper() {
+export default function SuccessfulPage() {
   const classes = useStyles();
-  const [displayNotification, setDisplayNotification] = React.useState(true);
+  const [displayNotification, setDisplayNotification] = useState(true);
   
   return (
     <div className={classes.successPage}>
