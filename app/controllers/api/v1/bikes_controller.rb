@@ -36,10 +36,10 @@ module Api
       def destroy
         bike = Bike.find_by(id: params[:id])
 
-        if bike.destroy
+        if !bike.blank? && bike.destroy
           render json: { message: 'Bike has been deleted successfully deleted' }, status: :no_content
         else
-          render json: { error: user.errors }, status: :unprocessable_entity
+          render json: { message: 'Bike does not exist, therefore it cannot be deleted.' }, status: :unprocessable_entity
         end
       end
 
