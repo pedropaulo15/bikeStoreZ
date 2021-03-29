@@ -8,6 +8,7 @@ class CreateBikes < ActiveRecord::Migration[6.1]
       t.string :rim_color
       t.string :saddle_color
       t.string :image_url
+      t.integer :created_by
       t.belongs_to :purchase, foreign_key: true
 
       t.timestamps
