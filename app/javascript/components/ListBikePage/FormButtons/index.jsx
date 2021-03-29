@@ -1,4 +1,3 @@
-import {Link} from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import React, {useState} from "react";
 import ModalBikeDetails from "./ModalBikeDetails";
@@ -18,8 +17,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center"
   },
   formButton: {
-    marginTop: "1px",
-    marginBottom: "1px"
+    marginTop: "8px",
+    marginBottom: "8px"
   },
   paper: {
     position: "absolute",
@@ -49,21 +48,15 @@ const FormButtons = ({ handleBuyBikeButton, bike }) => {
   
   const renderBuyButton = () => {
     return (
-      <Link
-        to={{ pathname: '/purchase_successful', state: { foo: 'bar' } }}
-        className="btn btn-lg"
-        role="button"
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={handleBuyBikeButton}
+        className={classes.formButton}
+        size="small"
       >
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={handleBuyBikeButton}
-          className={classes.formButton}
-          size="small"
-        >
-          Buy Bike
-        </Button>
-      </Link>
+        Buy Bike
+      </Button>
     );
   };
   

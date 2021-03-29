@@ -14,6 +14,10 @@ module Api
       end
 
       def create
+        user = User.find_by(id: bike_params[:created_by])
+
+        raise 'New bike records can only be done by Admin users' unless user.admin?
+
         bike = Bike.new(bike_params)
 
         if bike.save
@@ -53,7 +57,8 @@ module Api
           :wheel_size,
           :rim_color,
           :saddle_color,
-          :image_url
+          :image_url,
+          :created_by
         )
       end
     end

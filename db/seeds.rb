@@ -35,10 +35,11 @@ bikes = Bike.create(
                     brakes for additional tyre clearance and better stopping power in all weather conditions.',
       price: 123.00,
       wheel_size: 15,
-      rim_color: 'Black',
-      saddle_color: 'Spotted',
+      rim_color: 'spotted',
+      saddle_color: 'brown',
       image_url: 'https://d2j6dbq0eux0bg.cloudfront.net/images/28287025/1406138531.jpg',
-      purchase_id: nil
+      purchase_id: nil,
+      created_by: 1
     },
     {
       name: 'White Carrera Hybrid',
@@ -59,10 +60,11 @@ bikes = Bike.create(
                       further.',
       price: 880.00,
       wheel_size: 17,
-      rim_color: 'White',
-      saddle_color: 'Black',
+      rim_color: 'blue',
+      saddle_color: 'black',
       image_url: 'https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/2/2019/10/carrera-virtuoso.jpg',
-      purchase_id: nil
+      purchase_id: nil,
+      created_by: 1
     },
     {
       name: 'Apollo Phaze Mens Montain Bike Blue',
@@ -71,10 +73,11 @@ bikes = Bike.create(
                     value, this excellent men’s bike will open up new adventures without breaking the bank.',
       price: 228.00,
       wheel_size: 19,
-      rim_color: 'Blue',
-      saddle_color: 'Black',
+      rim_color: 'black',
+      saddle_color: 'blue',
       image_url: 'https://i1.adis.ws/i/washford/566205?w=1480&h=1110&qlt=75&fmt=webp&v=1',
-      purchase_id: nil
+      purchase_id: nil,
+      created_by: 1
     }
   ]
 )

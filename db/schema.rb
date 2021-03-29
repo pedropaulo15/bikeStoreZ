@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2021_03_27_175927) do
     t.string "rim_color"
     t.string "saddle_color"
     t.string "image_url"
+    t.integer "created_by"
     t.integer "purchase_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
