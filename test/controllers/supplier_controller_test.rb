@@ -1,6 +1,6 @@
 require "test_helper"
 
-class SuppliersControllerTest < ActionDispatch::IntegrationTest
+class SupplierControllerTest < ActionDispatch::IntegrationTest
   test 'GET #index' do
     get '/api/v1/suppliers'
 
