@@ -7,6 +7,7 @@ one:
   wheel_size: 1
   rim_color: MyString
   saddle_color: MyString
+  created_by: 1
   image_url: MyString
 
 two:
@@ -16,4 +17,5 @@ two:
   wheel_size: 1
   rim_color: MyString
   saddle_color: MyString
+  created_by: 1
   image_url: MyString
