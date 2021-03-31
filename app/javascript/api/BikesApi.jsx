@@ -12,7 +12,7 @@ class BikesApi {
   }
   
   deleteBike(bikeId) {
-    return axios.post(`/api/v1/bikes/${bikeId}`);
+    return axios.delete(`/api/v1/bikes/${bikeId}`);
   }
 }
 

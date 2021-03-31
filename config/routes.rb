@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :users, param: :id
       resources :bikes
       resources :purchases
+      resources :suppliers
     end
   end
 

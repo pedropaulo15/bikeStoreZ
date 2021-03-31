@@ -12,7 +12,7 @@ export default function SmallBikeItems() {
     BikesApi.getBikes()
       .then( resp => {
         const filteredBikes = resp.data.data.filter(function(bike) {
-          return bike.attributes.wheel_size === 17;
+          return bike.attributes.wheel_size === 19;
         });
         setBikes( filteredBikes )
       })
@@ -34,7 +34,7 @@ export default function SmallBikeItems() {
     PurchaseApi.addPurchases(newPurchaseRecordPayload)
       .then( resp => {
         if (resp.status === 201) {
-          console.log(JSON.stringify(resp));
+          console.log(`New purchase has been created: ${JSON.stringify(resp)}`);
           setPurchaseStatus(resp.status);
         }
       })

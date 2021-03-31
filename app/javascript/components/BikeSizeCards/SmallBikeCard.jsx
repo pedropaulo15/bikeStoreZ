@@ -40,11 +40,10 @@ const smallBikeCard = () => {
             height="140"
             image="https://ibkbike.com/5600-medium_default/hotwalk-carbon-specialized-satin-chamaleon-carbon.jpg"
             title="15 Inches Bike"
-            onClick={() => console.log("15 Inches Card Clicked")}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              15 Inches Bikes
+              17 Inches Bikes
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
               Here you can find good options of bikes for you kid, you have come

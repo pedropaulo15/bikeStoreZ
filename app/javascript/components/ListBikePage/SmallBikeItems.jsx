@@ -12,7 +12,7 @@ export default function SmallBikeItems() {
     BikesApi.getBikes()
       .then( resp => {
         const filteredBikes = resp.data.data.filter(function(bike) {
-          return bike.attributes.wheel_size === 15;
+          return bike.attributes.wheel_size === 17;
         });
         setBikes( filteredBikes )
       })
@@ -27,16 +27,18 @@ export default function SmallBikeItems() {
         paid_by: "VISA",
         total: price,
         bike_id: bike.id,
-        user_id: 2
+        user_id: 4
       }
     };
     
     PurchaseApi.addPurchases(newPurchaseRecordPayload)
       .then( resp => {
         if (resp.status === 201) {
-          console.log(JSON.stringify(resp));
+          console.log(`New purchase has been created: ${JSON.stringify(resp)}`);
           setPurchaseStatus(resp.status);
         }
+        
+        
       })
       .catch( resp => console.error(resp) );
   };
@@ -45,7 +47,13 @@ export default function SmallBikeItems() {
     if (purchaseStatus === 201) {
       return <Redirect to={'/purchase_successful'} />;
     } else {
-      return <BikeList bikes={bikes} handleBuyBikeButton={handleBuyBikeButton} purchaseStatus={purchaseStatus}/>;
+      return (
+        <BikeList
+          bikes={bikes}
+          handleBuyBikeButton={handleBuyBikeButton}
+          purchaseStatus={purchaseStatus}
+        />
+      );
     }
   };
   
