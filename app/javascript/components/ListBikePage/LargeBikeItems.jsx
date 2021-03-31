@@ -27,7 +27,7 @@ export default function SmallBikeItems() {
         paid_by: "VISA",
         total: price,
         bike_id: bike.id,
-        user_id: 2
+        user_id: 3
       }
     };
     
