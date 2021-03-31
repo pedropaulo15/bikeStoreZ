@@ -14,8 +14,6 @@ const useStyles = makeStyles(() => ({
 }));
 
 const ModalBikeDetails = ({ bike }) => {
-  console.log(bike);
-  
   const classes = useStyles();
   
   return (

@@ -7,11 +7,16 @@ admin = User.create(
       email: 'admin@bikestore.com',
       password_digest: '123456',
       user_role: User::UserRole::ADMIN.to_i
+    },
+    {
+      email: 'admin@camaloon.com',
+      password_digest: '123456',
+      user_role: User::UserRole::ADMIN.to_i
     }
   ]
 )
 
-Rails.logger.info("New #{admin.first.user_role} user has been created.")
+puts "#{admin.first.user_role} new ADMIN user has been created."
 
 customer = User.create(
   [
@@ -19,47 +24,58 @@ customer = User.create(
       email: 'customer@bikestore.com',
       password_digest: '123456',
       user_role: User::UserRole::CUSTOMER.to_i
+    },
+    {
+      email: 'customer@camaloon.com',
+      password_digest: '123456',
+      user_role: User::UserRole::CUSTOMER.to_i
     }
   ]
 )
 
-Rails.logger.info("New #{customer.first.user_role} user has been created.")
+puts "#{customer.first.user_role} CUSTOMER user has been created."
 
 bikes = Bike.create(
   [
     {
       name: 'Trek 2021 Speed bike',
-      description: 'Domane ALR 4 Disc the gateway to disc brake-equipped road bikes in our endurance line-up.
-                    It has all the trims that make it a fast, efficient and dependable ride – like an IsoSpeed
-                    decoupler and a full Shimano Tiagra drivetrain – with the added benefit of hydraulic disc
-                    brakes for additional tyre clearance and better stopping power in all weather conditions.',
+      description: 'This is the perfect bike to go fast and arrive in your
+                    destinations very quickly, you will never be late.',
       price: 123.00,
-      wheel_size: 15,
-      rim_color: 'spotted',
+      wheel_size: 17,
+      rim_color: 'green',
       saddle_color: 'brown',
       image_url: 'https://d2j6dbq0eux0bg.cloudfront.net/images/28287025/1406138531.jpg',
       purchase_id: nil,
       created_by: 1
     },
     {
-      name: 'White Carrera Hybrid',
-      description: 'Whether you’re looking for an easier commute or there’s some unchartered territory crying
-                      out to be explored, the Carrera Parva Womens Hybrid Bike - Grey helps take you further.
-                      With its new geometry having been designed to offer new improved levels of comfort, the
-                      lightweight but durable alloy frame, which comes with a lifetime guarantee, is ideal for
-                      leisurely rides or around town. The Shimano 2x drivetrain is simple to use, makes for
-                      smoother gear transitions and delivers fantastic performance from the 2x7 gears. Designed
-                      with an extra layer, the fast rolling, puncture resistant, 27.5 x 1.95 tyres have double walled
-                      rims for extra durability. And, when you want to keep going, the memory foam saddle will keep you
-                      well supported.
-
-                      The Carrera Parva is the perfect partner for adventures big or small and to get you started
-                      comes with a free bike build. With all the tools, equipment and training needed, we can get
-                      your bike built quickly and safely, and we’ll even get rid of the packaging for you. Plus, our
-                      free lifetime safety checks and lifetime frame guarantee mean you have the confidence to go
-                      further.',
-      price: 880.00,
+      name: 'Carrera 2021 Speed bike',
+      description: 'This is the description of the SECOND 17 inches bike.',
+      price: 321.00,
       wheel_size: 17,
+      rim_color: 'green',
+      saddle_color: 'brown',
+      image_url: 'https://d2j6dbq0eux0bg.cloudfront.net/images/28287025/1406138531.jpg',
+      purchase_id: nil,
+      created_by: 1
+    },
+    {
+      name: 'Caloi Vintage 1980',
+      description: 'This is the description of the THIRD 17 inches bike.',
+      price: 549.00,
+      wheel_size: 17,
+      rim_color: 'green',
+      saddle_color: 'black',
+      image_url: 'https://d2j6dbq0eux0bg.cloudfront.net/images/28287025/1406138531.jpg',
+      purchase_id: nil,
+      created_by: 1
+    },
+    {
+      name: 'Blue Carrera Hybrid - Medium',
+      description: 'This is the description of the FIRST 19 inches bike.',
+      price: 880.00,
+      wheel_size: 19,
       rim_color: 'blue',
       saddle_color: 'black',
       image_url: 'https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/2/2019/10/carrera-virtuoso.jpg',
@@ -67,32 +83,76 @@ bikes = Bike.create(
       created_by: 1
     },
     {
-      name: 'Apollo Phaze Mens Montain Bike Blue',
-      description: 'Whether it’s tackling the toughest trails or just enjoying a local leisure ride, the Apollo Phaze
-                    ticks plenty of boxes for a wide range of mountain bike riders. Mixing comfort, durability and
-                    value, this excellent men’s bike will open up new adventures without breaking the bank.',
-      price: 228.00,
+      name: 'Green Carrera Hybrid - Medium',
+      description: 'This is the description of the SECOND 19 inches bike.',
+      price: 880.00,
       wheel_size: 19,
+      rim_color: 'green',
+      saddle_color: 'blue',
+      image_url: 'https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/2/2019/10/carrera-virtuoso.jpg',
+      purchase_id: nil,
+      created_by: 1
+    },
+    {
+      name: 'Apollo Phaze Mens Montain Black',
+      description: 'This is the description of the FIRST 21 inches bike.',
+      price: 1299.00,
+      wheel_size: 21,
       rim_color: 'black',
+      saddle_color: 'black',
+      image_url: 'https://i1.adis.ws/i/washford/566205?w=1480&h=1110&qlt=75&fmt=webp&v=1',
+      purchase_id: nil,
+      created_by: 1
+    },
+    {
+      name: 'Apollo Phaze Mens Montain Green',
+      description: 'This is the description of the SECOND 21 inches bike.',
+      price: 1349.00,
+      wheel_size: 21,
+      rim_color: 'green',
       saddle_color: 'blue',
       image_url: 'https://i1.adis.ws/i/washford/566205?w=1480&h=1110&qlt=75&fmt=webp&v=1',
       purchase_id: nil,
       created_by: 1
-    }
+    },
+    {
+      name: 'Apollo Phaze Mens Montain Blue',
+      description: 'This is the description of the THIRD 21 inches bike.',
+      price: 2100.00,
+      wheel_size: 21,
+      rim_color: 'blue',
+      saddle_color: 'brown',
+      image_url: 'https://i1.adis.ws/i/washford/566205?w=1480&h=1110&qlt=75&fmt=webp&v=1',
+      purchase_id: nil,
+      created_by: 1
+    },
   ]
 )
 
-Rails.logger.info("#{bikes.count} new bikes has been created.")
+puts "#{bikes.count} new bikes has been created."
 
 purchases = Purchase.create(
   [
     {
-      paid_by: "debit card", total: 1599.99, bike_id: bikes.first.id, user_id: customer.first.id
+      paid_by: 'debit card', total: 1599.99, bike_id: bikes.first.id, user_id: customer.first.id
     },
     {
-      paid_by: "credit card", total: 699.99, bike_id: bikes.last.id, user_id: customer.first.id
+      paid_by: 'credit card', total: 699.99, bike_id: bikes.last.id, user_id: customer.first.id
     }
   ]
 )
 
-Rails.logger.info("#{purchases.count} new purchase records has been created.")
+puts "#{purchases.count} new purchase records has been created."
+
+suppliers = Supplier.create(
+  [
+    {
+      supplier_name: 'Camaloon', bike_part: 'chain', color: 'red'
+    },
+    {
+      supplier_name: 'Barcelona Bike (BB)', bike_part: 'gears', color: 'orange'
+    }
+  ]
+)
+
+puts "#{suppliers.count} new suppliers records has been created."

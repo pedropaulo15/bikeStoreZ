@@ -40,11 +40,10 @@ const smallBikeCategory = () => {
             height="140"
             image="https://ibkbike.com/5600-medium_default/hotwalk-carbon-specialized-satin-chamaleon-carbon.jpg"
             title="17 Inches Bike"
-            onClick={() => console.log("17 Inches Card Clicked")}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              17 Inches Bikes
+              19 Inches Bikes
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
               Here you can find good options of bikes for you kid, you have come

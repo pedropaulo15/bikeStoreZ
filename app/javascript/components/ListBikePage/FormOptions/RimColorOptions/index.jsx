@@ -1,14 +1,35 @@
+import React, {useState} from "react";
 import FormLabel from "@material-ui/core/FormLabel";
 import RadioGroup from "@material-ui/core/RadioGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Radio from "@material-ui/core/Radio";
-import React, {useState} from "react";
+import RimColorOption from "./RimColorOption";
 
 const RimColorOptions = ({bike}) => {
   const [rimColorValue, setRimColorValue] = useState(bike.attributes.rim_color);
+  const { wheel_size } = bike.attributes;
   
   const handleRimColorChange = (event) => {
     setRimColorValue(event.target.value);
+  };
+  
+  const renderOptions = () => {
+    if (wheel_size === 17) {
+      return <RimColorOption color={'green'} />
+    } else if (wheel_size === 19) {
+      return (
+        <>
+          <RimColorOption color={'green'} />
+          <RimColorOption color={'blue'} />
+        </>
+      );
+    } else {
+      return (
+        <>
+          <RimColorOption color={'green'} />
+          <RimColorOption color={'blue'} />
+          <RimColorOption color={'black'} />
+        </>
+      )
+    }
   };
   
   return (
@@ -23,21 +44,7 @@ const RimColorOptions = ({bike}) => {
         onChange={handleRimColorChange}
       >
         <div>
-          <FormControlLabel
-            value="black"
-            control={<Radio color="primary" />}
-            label="Black"
-          />
-          <FormControlLabel
-            value="blue"
-            control={<Radio color="primary" />}
-            label="Blue"
-          />
-          <FormControlLabel
-            value="spotted"
-            control={<Radio color="primary" />}
-            label="Spotted"
-          />
+          { renderOptions() }
         </div>
       </RadioGroup>
     </div>
