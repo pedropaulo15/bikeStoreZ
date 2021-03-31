@@ -45,6 +45,15 @@ const useStyles = makeStyles((theme) => ({
 
 const BikeList = ({ bikes, handleBuyBikeButton }) => {
   const classes = useStyles();
+  
+  const avatarUrl = (url) => {
+    if (url) {
+      return url;
+    } else {
+      return 'https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png';
+    }
+  };
+
   return (
     <div>
       {
@@ -59,7 +68,7 @@ const BikeList = ({ bikes, handleBuyBikeButton }) => {
                     </Typography>
                     <Avatar
                       alt="Remy Sharp"
-                      src="https://i.ytimg.com/vi/yaqe1qesQ8c/maxresdefault.jpg"
+                      src={avatarUrl(bike.attributes.image_url)}
                       className={classes.avatar}
                       variant="square"
                     />
