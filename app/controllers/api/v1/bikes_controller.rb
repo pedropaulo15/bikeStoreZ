@@ -14,10 +14,6 @@ module Api
       end
 
       def create
-        user = User.find_by(id: bike_params[:created_by])
-
-        raise 'New bike records can only be done by Admin users' unless user.admin?
-
         bike = Bike.new(bike_params)
 
         if bike.save
@@ -33,7 +29,7 @@ module Api
         if bike.update(bike_params)
           render json: BikeSerializer.new(bike).serializable_hash, status: :ok
         else
-          render json: { error: user.errors }, status: :unprocessable_entity
+          render json: { error: bike.errors }, status: :unprocessable_entity
         end
       end
 

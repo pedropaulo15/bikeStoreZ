@@ -13,7 +13,7 @@ module Api
         if supplier.save
           render json: SupplierSerializer.new(supplier).serializable_hash, status: :created
         else
-          render json: { error: purchase.errors }, status: :unprocessable_entity
+          render json: { error: supplier.errors }, status: :unprocessable_entity
         end
       end
 

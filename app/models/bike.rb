@@ -11,6 +11,7 @@ class Bike < ApplicationRecord
   validate :check_medium_bike_color, if: -> { wheel_size.to_s == WheelSizes::MEDIUM }
   validate :check_large_bike_color, if: -> { wheel_size.to_s == WheelSizes::LARGE }
   validate :check_bike_size
+  validate :check_user_role
 
   module WheelSizes
     SMALL = '17'.freeze
@@ -52,6 +53,11 @@ class Bike < ApplicationRecord
     rim_color == RimColors::GREEN || rim_color == RimColors::BLUE
   end
 
+  def valid_admin_user?
+    user = User.find_by(id: created_by)
+    user&.admin?
+  end
+
   def check_bike_size
     errors.add(:wheel_size, 'is invalid') unless valid_wheel_size?
   end
@@ -66,5 +72,9 @@ class Bike < ApplicationRecord
 
   def check_medium_bike_color
     errors.add(:rim_color, 'is invalid for 19 inches bike') unless valid_medium_bike_color?
+  end
+
+  def check_user_role
+    errors.add(:created_by, 'is not an admin user') unless valid_admin_user?
   end
 end
