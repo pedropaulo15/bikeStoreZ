@@ -27,7 +27,7 @@ export default function SmallBikeItems() {
         paid_by: "VISA",
         total: price,
         bike_id: bike.id,
-        user_id: 4
+        user_id: 3
       }
     };
     
@@ -50,7 +50,7 @@ export default function SmallBikeItems() {
           bikes={bikes}
           handleBuyBikeButton={handleBuyBikeButton}
           purchaseStatus={purchaseStatus}
-          bikeSize={21}
+          bikeSize={17}
         />
       );
     }

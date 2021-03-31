@@ -26,17 +26,17 @@ const renderSaddleColorOption = ({bike}) => {
           <FormControlLabel
             value="black"
             control={<Radio color="primary" />}
-            label="Black"
+            label="black"
           />
           <FormControlLabel
             value="blue"
             control={<Radio color="primary" />}
-            label="Blue"
+            label="blue"
           />
           <FormControlLabel
             value="brown"
             control={<Radio color="primary" />}
-            label="Brown"
+            label="brown"
           />
         </div>
       </RadioGroup>
