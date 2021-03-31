@@ -1,6 +1,6 @@
 require "test_helper"
 
-class PurchaseControllerTest < ActionDispatch::IntegrationTest
+class PurchasesControllerTest < ActionDispatch::IntegrationTest
   test 'GET #index' do
     get '/api/v1/purchases'
 

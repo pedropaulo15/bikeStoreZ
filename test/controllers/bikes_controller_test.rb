@@ -16,7 +16,6 @@ class BikesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'POST #create successful when wheel_size is 17 and rim_color green' do
-    user = create_user
     bike_params = {
       name: "17 inches bike",
       description: "17 inches bike long description",
@@ -25,7 +24,7 @@ class BikesControllerTest < ActionDispatch::IntegrationTest
       rim_color: "green",
       saddle_color: "black",
       image_url: "https://d2j6dbq0eux0bg.cloudfront.net/images/28287025/1406138531.jpg",
-      created_by: user.id
+      created_by: create_admin_user.id
     }
 
     post '/api/v1/bikes/', params: { bike: bike_params }
@@ -34,7 +33,6 @@ class BikesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'POST #create successful when wheel_size is 19 and rim_color green' do
-    user = create_user
     bike_params = {
       name: "19 inches bike",
       description: "19 inches bike long description",
@@ -43,7 +41,7 @@ class BikesControllerTest < ActionDispatch::IntegrationTest
       rim_color: "green",
       saddle_color: "black",
       image_url: "https://d2j6dbq0eux0bg.cloudfront.net/images/28287025/1406138531.jpg",
-      created_by: user.id
+      created_by: create_admin_user.id
     }
 
     post '/api/v1/bikes/', params: { bike: bike_params }
@@ -52,7 +50,6 @@ class BikesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'POST #create successful when wheel_size is 19 and rim_color blue' do
-    user = create_user
     bike_params = {
       name: "19 inches bike",
       description: "19 inches bike long description",
@@ -61,7 +58,7 @@ class BikesControllerTest < ActionDispatch::IntegrationTest
       rim_color: "blue",
       saddle_color: "black",
       image_url: "https://d2j6dbq0eux0bg.cloudfront.net/images/28287025/1406138531.jpg",
-      created_by: user.id
+      created_by: create_admin_user.id
     }
 
     post '/api/v1/bikes/', params: { bike: bike_params }
@@ -70,7 +67,6 @@ class BikesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'POST #create successful when wheel_size is 21 and rim_color green' do
-    user = create_user
     bike_params = {
       name: "21 inches bike",
       description: "21 inches bike long description",
@@ -79,7 +75,7 @@ class BikesControllerTest < ActionDispatch::IntegrationTest
       rim_color: "green",
       saddle_color: "black",
       image_url: "https://d2j6dbq0eux0bg.cloudfront.net/images/28287025/1406138531.jpg",
-      created_by: user.id
+      created_by: create_admin_user.id
     }
 
     post '/api/v1/bikes/', params: { bike: bike_params }
@@ -88,7 +84,6 @@ class BikesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'POST #create successful when wheel_size is 21 and rim_color blue' do
-    user = create_user
     bike_params = {
       name: "21 inches bike",
       description: "21 inches bike long description",
@@ -97,7 +92,7 @@ class BikesControllerTest < ActionDispatch::IntegrationTest
       rim_color: "blue",
       saddle_color: "black",
       image_url: "https://d2j6dbq0eux0bg.cloudfront.net/images/28287025/1406138531.jpg",
-      created_by: user.id
+      created_by: create_admin_user.id
     }
 
     post '/api/v1/bikes/', params: { bike: bike_params }
@@ -106,7 +101,6 @@ class BikesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'POST #create successful when wheel_size is 21 and rim_color black' do
-    user = create_user
     bike_params = {
       name: "21 inches bike",
       description: "21 inches bike long description",
@@ -115,7 +109,7 @@ class BikesControllerTest < ActionDispatch::IntegrationTest
       rim_color: "black",
       saddle_color: "black",
       image_url: "https://d2j6dbq0eux0bg.cloudfront.net/images/28287025/1406138531.jpg",
-      created_by: user.id
+      created_by: create_admin_user.id
     }
 
     post '/api/v1/bikes/', params: { bike: bike_params }
@@ -141,8 +135,6 @@ class BikesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'POST #create 422 when wheel_size is 17 and rim_color blue' do
-    user = create_user
-
     bike_params = {
       name: "17 inches bike",
       description: "19 inches bike long description",
@@ -151,7 +143,7 @@ class BikesControllerTest < ActionDispatch::IntegrationTest
       rim_color: "blue",
       saddle_color: "black",
       image_url: "https://d2j6dbq0eux0bg.cloudfront.net/images/28287025/1406138531.jpg",
-      created_by: user.id
+      created_by: create_admin_user.id
     }
 
     post '/api/v1/bikes/', params: { bike: bike_params }
@@ -160,8 +152,6 @@ class BikesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'POST #create 422 when wheel_size is 17 and rim_color black' do
-    user = create_user
-
     bike_params = {
       name: "17 inches bike",
       description: "17 inches bike long description",
@@ -170,7 +160,7 @@ class BikesControllerTest < ActionDispatch::IntegrationTest
       rim_color: "black",
       saddle_color: "black",
       image_url: "https://d2j6dbq0eux0bg.cloudfront.net/images/28287025/1406138531.jpg",
-      created_by: user.id
+      created_by: create_admin_user.id
     }
 
     post '/api/v1/bikes/', params: { bike: bike_params }
@@ -179,8 +169,6 @@ class BikesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'POST #create 422 when wheel_size is 19 and rim_color black' do
-    user = create_user
-
     bike_params = {
       name: "19 inches bike",
       description: "19 inches bike long description",
@@ -189,7 +177,7 @@ class BikesControllerTest < ActionDispatch::IntegrationTest
       rim_color: "black",
       saddle_color: "black",
       image_url: "https://d2j6dbq0eux0bg.cloudfront.net/images/28287025/1406138531.jpg",
-      created_by: user.id
+      created_by: create_admin_user.id
     }
 
     post '/api/v1/bikes/', params: { bike: bike_params }
@@ -235,8 +223,6 @@ class BikesControllerTest < ActionDispatch::IntegrationTest
   private
 
   def create_valid_bike_record
-    user = create_user
-
     bike_params = {
       name: "17 inches bike",
       description: "17 inches bike long description",
@@ -245,13 +231,13 @@ class BikesControllerTest < ActionDispatch::IntegrationTest
       rim_color: "green",
       saddle_color: "black",
       image_url: "https://d2j6dbq0eux0bg.cloudfront.net/images/28287025/1406138531.jpg",
-      created_by: user.id
+      created_by: create_admin_user.id
     }
 
     Bike.create!(bike_params)
   end
 
-  def create_user
+  def create_admin_user
     user_params = {
       email: "email@test.com",
       password_digest: "123456",
