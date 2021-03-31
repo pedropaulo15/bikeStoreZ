@@ -11,7 +11,7 @@ class PurchasesControllerTest < ActionDispatch::IntegrationTest
     purchase_params = {
       paid_by: 'Martercard',
       total: 123.45,
-      bike_id: create_valid_bike_record.id,
+      bike_id: bike.id,
       user_id: customer_user.id
     }
 
@@ -35,21 +35,6 @@ class PurchasesControllerTest < ActionDispatch::IntegrationTest
 
   private
 
-  def create_valid_bike_record
-    bike_params = {
-      name: "17 inches bike",
-      description: "17 inches bike long description",
-      price: 1300,
-      wheel_size: 17,
-      rim_color: "green",
-      saddle_color: "black",
-      image_url: "https://d2j6dbq0eux0bg.cloudfront.net/images/28287025/1406138531.jpg",
-      created_by: admin_user.id
-    }
-
-    Bike.create!(bike_params)
-  end
-
   def admin_user
     user_params = {
       email: "admin@test.com",
@@ -68,5 +53,20 @@ class PurchasesControllerTest < ActionDispatch::IntegrationTest
     }
 
     User.create!(user_params)
+  end
+
+  def bike
+    bike_params = {
+      name: '19 inches bike',
+      description: '19 inches bike long description',
+      price: 1300,
+      wheel_size: 17,
+      rim_color: 'green',
+      saddle_color: 'black',
+      image_url: 'https://d2j6dbq0eux0bg.cloudfront.net/images/28287025/1406138531.jpg',
+      created_by: admin_user.id
+    }
+
+    Bike.create!(bike_params)
   end
 end
