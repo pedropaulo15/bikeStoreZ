@@ -11,9 +11,10 @@ import {makeStyles} from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   root: {
     "& .MuiTextField-root": {
-      margin: theme.spacing(1),
-      width: "25ch"
-    }
+      margin: theme.spacing(3),
+      width: "25ch",
+    },
+    marginTop: "20px"
   },
   bikeForm: {
     flexGrow: 1,
@@ -51,7 +52,6 @@ const BikeList = ({ bikes, handleBuyBikeButton }) => {
           return (
             <form className={classes.root} noValidate autoComplete="off" key={bike.id}>
               <div>
-                {/* This div will have an id for each bike, so it can be passed to the handleBuyBikeButton */}
                 <div className={classes.bikeForm}>
                   <div className={classes.formButtons}>
                     <Typography variant="h6" component="h2">
