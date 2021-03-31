@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Redirect } from 'react-router';
-import BikeList from "./BikeList";
 import BikesApi from "../../api/BikesApi";
 import PurchaseApi from "../../api/PurchaseApi";
+import Page from "./FormOptions/Page";
 
 export default function SmallBikeItems() {
   const [bikes, setBikes] = useState([]);
@@ -45,7 +45,14 @@ export default function SmallBikeItems() {
     if (purchaseStatus === 201) {
       return <Redirect to={'/purchase_successful'} />;
     } else {
-      return <BikeList bikes={bikes} handleBuyBikeButton={handleBuyBikeButton} purchaseStatus={purchaseStatus}/>;
+      return (
+        <Page
+          bikes={bikes}
+          handleBuyBikeButton={handleBuyBikeButton}
+          purchaseStatus={purchaseStatus}
+          bikeSize={21}
+        />
+      );
     }
   };
   

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Redirect } from 'react-router';
-import BikeList from "./BikeList";
 import BikesApi from "../../api/BikesApi";
 import PurchaseApi from "../../api/PurchaseApi";
+import Page from "./FormOptions/Page";
 
 export default function SmallBikeItems() {
   const [bikes, setBikes] = useState([]);
@@ -37,8 +37,6 @@ export default function SmallBikeItems() {
           console.log(`New purchase has been created: ${JSON.stringify(resp)}`);
           setPurchaseStatus(resp.status);
         }
-        
-        
       })
       .catch( resp => console.error(resp) );
   };
@@ -48,10 +46,11 @@ export default function SmallBikeItems() {
       return <Redirect to={'/purchase_successful'} />;
     } else {
       return (
-        <BikeList
+        <Page
           bikes={bikes}
           handleBuyBikeButton={handleBuyBikeButton}
           purchaseStatus={purchaseStatus}
+          bikeSize={21}
         />
       );
     }
